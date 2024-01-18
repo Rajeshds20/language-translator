@@ -20,6 +20,10 @@ function App() {
       .then(data => {
         setLanguages(data);
       })
+      .catch(err => {
+        console.error(err);
+        alert('Please Check your internet connection');
+      });
   }, []);
 
   const translateText = () => {
@@ -29,7 +33,7 @@ function App() {
       return;
     }
     setToText('Translating...');
-    // Disable cors in fetch
+    if (!navigator.onLine) return alert('Please check your internet connection');
     fetch(`https://api.mymemory.translated.net/get?q=${fromText}&langpair=${fromLang}|${toLang}`)
       .then(response => response.json())
       .then(data => {
@@ -37,6 +41,7 @@ function App() {
       })
       .catch(err => {
         console.error(err);
+        alert('Please Check your internet connection');
       });
   };
 
