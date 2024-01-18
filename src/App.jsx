@@ -106,6 +106,27 @@ function App() {
           <div className='char-count-bar'>Character Count: {fromText.length}</div>
         </div>
       </div>
+      <div className='footer'>
+        <h4>Made with ❣️ by Rajesh</h4>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '-25px' }}>
+            <h5> Wanted to contribute ?</h5>
+            <span><a href='https://github.com/rajeshds20/language-translator' target='_blank' rel='noreferrer'>
+              <img style={{ width: '35px', marginTop: '10px' }} alt='github' src='https://img.icons8.com/fluent/48/000000/github.png' />
+            </a>
+            </span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '-25px' }}>
+            <h5>Connect with me:</h5>
+            <a href='https://www.linkedin.com/in/devangamsajjarajesh/' target='_blank' rel='noreferrer'>
+              <img alt='linkedin' style={{ width: '35px', marginTop: '10px' }} src='https://img.icons8.com/color/48/000000/linkedin.png' />
+            </a>
+            <a href='https://twitter.com/rajeshds55' target='_blank' rel='noreferrer'>
+              <img alt='twitter' style={{ width: '35px', marginTop: '10px' }} src='https://img.icons8.com/color/48/000000/twitter.png' />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
