@@ -15,15 +15,21 @@ function App() {
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
-    fetch('https://libretranslate.com/languages')
-      .then(response => response.json())
-      .then(data => {
-        setLanguages(data);
-      })
-      .catch(err => {
-        console.error(err);
-        alert('Please Check your internet connection');
-      });
+    if (localStorage.getItem('tanslate-langs')) {
+      setLanguages(JSON.parse(localStorage.getItem('tanslate-langs')));
+    }
+    else {
+      fetch('https://libretranslate.com/languages')
+        .then(response => response.json())
+        .then(data => {
+          setLanguages(data);
+          localStorage.setItem('tanslate-langs', JSON.stringify(data));
+        })
+        .catch(err => {
+          console.error(err);
+          alert('Please Check your internet connection');
+        });
+    }
   }, []);
 
   const translateText = () => {
